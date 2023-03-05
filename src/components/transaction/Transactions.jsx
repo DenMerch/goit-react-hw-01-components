@@ -1,0 +1,34 @@
+import css from './Transactions.module.css'
+import PropTypes from "prop-types";
+export const Transactions = ({ items }) => {
+    return (
+        <div>
+            <h2>Transactions</h2>
+            <table className={css.transaction}>
+                <thead>
+                    <tr>
+                        <th>Type</th>
+                        <th>Amount</th>
+                        <th>Currency</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {items.map(transaction => {
+                        return <tr key={transaction.id}>
+                            <td>{transaction.type}</td>
+                            <td>{transaction.amount}</td>
+                            <td>{transaction.currency}</td>
+                        </tr>
+                    })}
+                </tbody>
+            </table>
+        </div>);
+}
+Transactions.propTypes = {
+    items: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.number,
+    ])))
+
+}

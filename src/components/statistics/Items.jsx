@@ -1,4 +1,4 @@
-import css from './Items.module.css'
+import PropTypes from "prop-types";
 export const Items = ({ data }) => {
 
     return data.map(item => {
@@ -10,5 +10,12 @@ export const Items = ({ data }) => {
             </li>
         )
     })
+
+}
+Items.propTypes = {
+    data: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.number,
+    ])))
 
 }
