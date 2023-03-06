@@ -15,7 +15,12 @@ export const Transactions = ({ items }) => {
                 </thead>
 
                 <tbody>
-                    <TransactionItem items={items} />
+                    {items.map(item => {
+                        return <tr key={item.id}>
+                            <TransactionItem item={item} />
+                        </tr>
+                    })}
+
 
                 </tbody>
             </table>

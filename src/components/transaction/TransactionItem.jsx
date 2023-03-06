@@ -1,13 +1,11 @@
 import PropTypes from "prop-types";
-export const TransactionItem = ({ items }) => {
+export const TransactionItem = ({ item }) => {
     return (
-        items.map(transaction => {
-            return <tr key={transaction.id}>
-                <td>{transaction.type}</td>
-                <td>{transaction.amount}</td>
-                <td>{transaction.currency}</td>
-            </tr>
-        })
+        <>
+            <td>{item.type}</td>
+            <td>{item.amount}</td>
+            <td>{item.currency}</td>
+        </>
     )
 }
 TransactionItem.propTypes = {

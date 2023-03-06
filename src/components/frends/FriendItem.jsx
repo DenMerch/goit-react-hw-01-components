@@ -1,15 +1,15 @@
 import PropTypes from "prop-types";
 import css from './Friends.module.css'
-export const FriendItem = ({ friends }) => {
+export const FriendItem = ({ friend }) => {
     return (
-        friends.map(friend => {
-            return <li className={css.item} key={friend.id}>
-                <span className={friend.isOnline ? css.green : css.red} ></span>
-                <img className="avatar" src={friend.avatar} alt="User avatar" width="48" />
-                <p className="name">{friend.name}</p>
-            </li>
-        })
-    )
+        <div className={css.item}>
+            <div className={friend.isOnline ? css.green : css.red}   ></div>
+            <img className="avatar" src={friend.avatar} alt="User avatar" width="48" />
+            <p className="name">{friend.name} </p>
+        </div>)
+
+
+
 }
 FriendItem.propTypes = {
     friends: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.oneOfType([
