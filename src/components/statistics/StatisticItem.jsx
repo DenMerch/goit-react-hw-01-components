@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-export const Items = ({ data }) => {
+export const Item = ({ data }) => {
 
     return data.map(item => {
         const randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
@@ -12,7 +12,7 @@ export const Items = ({ data }) => {
     })
 
 }
-Items.propTypes = {
+Item.propTypes = {
     data: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.oneOfType([
         PropTypes.string,
         PropTypes.number,

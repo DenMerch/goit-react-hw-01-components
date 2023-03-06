@@ -1,4 +1,4 @@
-import { Items } from "./Items"
+import { Item } from "./StatisticItem"
 import css from './Statistic.module.css'
 import PropTypes from "prop-types";
 
@@ -6,10 +6,9 @@ export const Statistics = ({ title = '', data }) => {
 
     return (
         <section className={css.statistics}>
-            <h2 className="title">{title}</h2>
-
+            {title ? <h2 className="title">{title}</h2> : null}
             <ul className={css.statList}>
-                <Items data={data} />
+                <Item data={data} />
             </ul>
         </section>
     )

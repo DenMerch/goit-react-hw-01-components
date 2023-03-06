@@ -1,5 +1,6 @@
+import { TransactionItem } from './TransactionItem';
 import css from './Transactions.module.css'
-import PropTypes from "prop-types";
+
 export const Transactions = ({ items }) => {
     return (
         <div>
@@ -14,21 +15,9 @@ export const Transactions = ({ items }) => {
                 </thead>
 
                 <tbody>
-                    {items.map(transaction => {
-                        return <tr key={transaction.id}>
-                            <td>{transaction.type}</td>
-                            <td>{transaction.amount}</td>
-                            <td>{transaction.currency}</td>
-                        </tr>
-                    })}
+                    <TransactionItem items={items} />
+
                 </tbody>
             </table>
         </div>);
-}
-Transactions.propTypes = {
-    items: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.oneOfType([
-        PropTypes.string,
-        PropTypes.number,
-    ])))
-
 }
