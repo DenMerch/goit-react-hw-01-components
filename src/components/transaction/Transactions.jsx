@@ -1,5 +1,6 @@
 import { TransactionItem } from './TransactionItem';
 import css from './Transactions.module.css'
+import PropTypes from "prop-types";
 
 export const Transactions = ({ items }) => {
     return (
@@ -25,4 +26,7 @@ export const Transactions = ({ items }) => {
                 </tbody>
             </table>
         </div>);
+}
+Transactions.propTypes = {
+    items: PropTypes.arrayOf(PropTypes.object)
 }

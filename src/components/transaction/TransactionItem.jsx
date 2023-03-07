@@ -9,9 +9,9 @@ export const TransactionItem = ({ item }) => {
     )
 }
 TransactionItem.propTypes = {
-    items: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.oneOfType([
+    item: PropTypes.objectOf(PropTypes.oneOfType([
         PropTypes.string,
         PropTypes.number,
-    ])))
+    ]))
 
 }

@@ -3,7 +3,6 @@ import css from './Statistic.module.css'
 import PropTypes from "prop-types";
 
 export const Statistics = ({ title = '', data }) => {
-
     return (
         <section className={css.statistics}>
             {title && <h2 className="title">{title}</h2>}
@@ -22,6 +21,7 @@ export const Statistics = ({ title = '', data }) => {
     )
 }
 Statistics.propTypes = {
-    title: PropTypes.string
+    title: PropTypes.string,
+    data: PropTypes.arrayOf(PropTypes.object)
 
 }

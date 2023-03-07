@@ -7,14 +7,11 @@ export const FriendItem = ({ friend }) => {
             <img className="avatar" src={friend.avatar} alt="User avatar" width="48" />
             <p className="name">{friend.name} </p>
         </div>)
-
-
-
 }
 FriendItem.propTypes = {
-    friends: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.oneOfType([
+    friend: PropTypes.objectOf(PropTypes.oneOfType([
         PropTypes.bool,
         PropTypes.string,
         PropTypes.number,
-    ])))
+    ]))
 }

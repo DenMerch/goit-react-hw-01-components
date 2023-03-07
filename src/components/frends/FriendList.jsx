@@ -1,4 +1,4 @@
-
+import PropTypes from "prop-types";
 import { FriendItem } from "./FriendItem";
 export const FriendList = ({ friends }) => {
     return (
@@ -11,10 +11,14 @@ export const FriendList = ({ friends }) => {
                     </li>)
 
                 })}
-
-
-
             </ul >
         </div>
     )
+}
+FriendList.propTypes = {
+    friends: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.oneOfType([
+        PropTypes.number,
+        PropTypes.string,
+        PropTypes.bool,
+    ])))
 }
